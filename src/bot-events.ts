@@ -45,8 +45,8 @@ class BotClient implements IBotClient
 					if (params.length !== 4) { throw Error("Invalid Number of arguments"); }
 					const numberOfPlayers = parseInt(params[0], 10);
 					const playerLevel = parseInt(params[1], 10);
-					const singleMonster = params[2] === "true" ? true : false;
-					const compactView = params[3] === "true" ? true : false;
+					const singleMonster = params[2].trim() === "true" ? true : false;
+					const compactView = params[3].trim() === "true" ? true : false;
 
 					const monsters = this._encounterGenerator.GenerateEncounter(numberOfPlayers, playerLevel, singleMonster);
 					const response = this.getMonstersAsString(monsters, compactView);

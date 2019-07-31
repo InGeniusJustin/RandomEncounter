@@ -66,8 +66,8 @@ class BotClient implements IBotClient
 					const enemyType = params[0];
 					const numberOfPlayers = parseInt(params[1], 10);
 					const playerLevel = parseInt(params[2], 10);
-					const singleMonster = params[3] === "true" ? true : false;
-					const compactView = params[4] === "true" ? true : false;
+					const singleMonster = params[3].trim() === "true" ? true : false;
+					const compactView = params[4].trim() === "true" ? true : false;
 
 					const monsters = this._encounterGenerator.GenerateEncounter(numberOfPlayers, playerLevel, singleMonster, enemyType);
 					const response = this.getMonstersAsString(monsters, compactView);

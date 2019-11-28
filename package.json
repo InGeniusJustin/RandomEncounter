@@ -2,11 +2,11 @@
 	"name": "discord",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "main.js",
 	"scripts": {
 		"tsc": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "tsc && node .\\build\\server.js",
+		"start": "tsc && node ./build/server.js",
 		"dev": "ts-node-dev --respawn --transpileOnly ./src/server.ts"
 	},
 	"author": "",

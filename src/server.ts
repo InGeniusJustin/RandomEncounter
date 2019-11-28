@@ -3,8 +3,6 @@ import express from 'express';
 // Import WelcomeController from controllers entry point
 import { BotActions, MonsterActions } from './controllers';
 
-import * as fs from 'fs';
-import * as https from 'https';
 import { BotClientSingleton } from './bot-events';
 // Create a new express application instance
 const app: express.Application = express();

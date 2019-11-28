@@ -16,14 +16,19 @@ const port: number = <number>(process.env.PORT || 3000);
 app.use('/', BotActions);
 app.use('/monster', MonsterActions);
 
-const httpsOptions = {
-	key: fs.readFileSync('./key.pem'),
-	cert: fs.readFileSync('./cert.pem')
-}
+// const httpsOptions = {
+// 	key: fs.readFileSync('./key.pem'),
+// 	cert: fs.readFileSync('./cert.pem')
+// }
 
-const server = https.createServer(httpsOptions, app).listen(port, () =>
+// const server = https.createServer(httpsOptions, app).listen(port, () =>
+// {
+// 	console.log(`Listening at https://localhost:${port}/`);
+// })
+
+app.listen(port, () =>
 {
-	console.log(`Listening at https://localhost:${port}/`);
+	console.log(`Listening on ${port}/`)
 })
 
 const botClient = BotClientSingleton.BotClient;
